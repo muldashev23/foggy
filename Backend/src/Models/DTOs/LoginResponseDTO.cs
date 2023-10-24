@@ -8,4 +8,6 @@ public class LoginResponseDTO
     public required bool IsAdmin { get; set; }
 
     public required bool IsManager { get; set; }
+    public required bool IsBarmen { get; set; }
+    public required bool IsShishaMaster { get; set; }
 }

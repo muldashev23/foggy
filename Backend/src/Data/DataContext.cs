@@ -11,6 +11,7 @@ public class DataContext : DbContext
         : base(options) { }
 
     public DbSet<AppUser> Users { get; set; }
+    public DbSet<Shift> Shifts { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -27,6 +28,8 @@ public class DataContext : DbContext
                     Role = "Manager",
                     PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes("Admin123")),
                     PasswordSalt = hmac.Key,
+                    IsBarmen = false,
+                    IsShishaMaster = false
                 }
             );
     }

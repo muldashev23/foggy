@@ -1,4 +1,5 @@
 ﻿using Backend.Data;
+using Backend.Models.Interfaces;
 using Backend.Data.Repositories;
 using Backend.Services;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +23,7 @@ public static class ApplicationServiceExtension
         services.AddCors();
         services.AddScoped<IAccountRepository, AccountRepository>();
         services.AddScoped<ITokenService, TokenService>();
+        services.AddScoped<IShiftRepository, ShiftRepository>();
         services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         return services;
     }

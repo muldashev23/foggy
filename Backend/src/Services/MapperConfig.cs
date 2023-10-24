@@ -9,5 +9,7 @@ public class MapperConfig : Profile
     public MapperConfig()
     {
         CreateMap<AppUser, UserDTO>();
+        CreateMap<Shift, ListOfShiftsResponseDTO>();
+        CreateMap<AppUser, UserBasicInfoDTO>();
     }
 }

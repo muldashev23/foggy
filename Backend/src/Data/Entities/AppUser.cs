@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Backend.Data.Entities;
 
@@ -26,4 +27,13 @@ public class AppUser
 
     [Required]
     public required string Role { get; set; }
+
+    [JsonIgnore]
+    public Shift Shift { get; set; }
+
+    [Required]
+    public required bool IsBarmen { get; set; }
+
+    [Required]
+    public required bool IsShishaMaster { get; set; }
 }
