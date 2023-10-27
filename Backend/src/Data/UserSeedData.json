@@ -1,0 +1,82 @@
+[
+  {
+    "FirstName": "Katerina",
+    "Surname": "Ovechkina",
+    "Email": "katerina@gmail.com",
+    "Role": "Admin",
+    "IsBarmen": true,
+    "IsShishaMaster": false
+  },
+  {
+    "FirstName": "Madina",
+    "Surname": "Meirambekova",
+    "Email": "madina@gmail.com",
+    "Role": "User",
+    "IsBarmen": true,
+    "IsShishaMaster": false
+  },
+  {
+    "FirstName": "Marat",
+    "Surname": "Amangeldinov",
+    "Email": "marat@gmail.com",
+    "Role": "User",
+    "IsBarmen": true,
+    "IsShishaMaster": false
+  },
+  {
+    "FirstName": "Katerina",
+    "Surname": "Karpenko",
+    "Email": "karpenko@gmail.com",
+    "Role": "User",
+    "IsBarmen": true,
+    "IsShishaMaster": false
+  },
+  {
+    "FirstName": "Aibek",
+    "Surname": "Yelubay",
+    "Email": "aibek@gmail.com",
+    "Role": "Admin",
+    "IsBarmen": true,
+    "IsShishaMaster": false
+  },
+  {
+    "FirstName": "Alikhan",
+    "Surname": "Bissapin",
+    "Email": "alikhan@gmail.com",
+    "Role": "User",
+    "IsBarmen": true,
+    "IsShishaMaster": false
+  },
+  {
+    "FirstName": "Amina",
+    "Surname": "Kuttygul",
+    "Email": "amina@gmail.com",
+    "Role": "User",
+    "IsBarmen": true,
+    "IsShishaMaster": false
+  },
+  {
+    "FirstName": "Kristina",
+    "Surname": "Khan",
+    "Email": "kristina@gmail.com",
+    "Role": "User",
+    "IsBarmen": true,
+    "IsShishaMaster": false
+  },
+  {
+    "FirstName": "Oleg",
+    "Surname": "Malayev",
+    "Email": "oleg@gmail.com",
+    "Role": "Admin",
+    "IsBarmen": false,
+    "IsShishaMaster": true
+  },
+  {
+    "FirstName": "Adylbek",
+    "Surname": "Aidarkulov",
+    "Email": "adylbek@gmail.com",
+    "Role": "User",
+    "IsBarmen": false,
+    "IsShishaMaster": true
+  }
+]

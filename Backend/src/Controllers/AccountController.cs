@@ -15,7 +15,7 @@ public class AccountController : BaseApiController
         _accountRepository = accountRepository;
     }
 
-    [HttpPost]
+    [HttpPost("login")]
     public async Task<ActionResult<LoginResponseDTO>> Login(
         [FromBody] LoginRequestDTO loginRequestDTO
     )

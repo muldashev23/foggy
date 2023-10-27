@@ -1,0 +1,109 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-sm-12 bg-dark bg-mine">
+            <h2 class="text-primary">Welcome</h2> 
+            <h4>to our web app for employee schedules!</h4>
+            <p>
+                We're delighted to have you here, and we want to make managing your workforce's schedules as 
+                seamless as possible. With our user-friendly interface and powerful tools, you'll find it easier 
+                than ever to create, share, and update schedules for your team.
+            </p>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3  g-3">
+        <div class="col">
+            <div class="card text-white bg-dark mb-3 h-100" style="max-width: 20rem;">
+
+                <div class="card-header text-primary">Foggy Prague</div>
+                <div class="card-body">
+                  <h5 class="text-dangerous" style="text-align: center;">{{dayOfWeek}}</h5>
+                  <table class="table table-hover">
+                    <thead>
+                      <tr class="table-dark">
+                        <th scope="col">Barmens:</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="table-dark">
+                        <div *ngFor="let shift of barmensShift">
+                          <app-day-card [shift]="shift"></app-day-card>
+                        </div>
+                      </tr>
+                      <br>
+                      <tr class="table-dark">
+                        <th>Shisha Masters:</th>
+                      </tr>
+                      <tr class="table-dark">
+                        <div *ngFor="let shift of shishamensShift">
+                          <app-day-card [shift]="shift"></app-day-card>
+                        </div>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card text-white bg-dark mb-3 h-100" style="max-width: 20rem;">
+                <div class="card-header text-primary">Foggy Prague 2</div>
+                <div class="card-body">
+                  <h5 class="text-dangerous" style="text-align: center;">{{dayOfWeek}}</h5>
+                  <table class="table table-hover">
+                    <thead>
+                      <tr class="table-dark">
+                        <th scope="col">Barmens:</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="table-dark">
+                        <div *ngFor="let shift of barmensShift">
+                          <app-day-card [shift]="shift"></app-day-card>
+                        </div>
+                      </tr>
+                      <br>
+                      <tr class="table-dark">
+                        <th>Shisha Masters:</th>
+                      </tr>
+                      <tr class="table-dark">
+                        <div *ngFor="let shift of shishamensShift">
+                          <app-day-card [shift]="shift"></app-day-card>
+                        </div>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card text-white bg-dark mb-3 h-100" style="max-width: 20rem;" routerLink="/company/bistro">
+                <div class="card-header text-primary">Foggy Bistro</div>
+                <div class="card-body">
+                  <h5 class="text-dangerous" style="text-align: center;">{{dayOfWeek}}</h5>
+                  <table class="table table-hover">
+                    <thead>
+                      <tr class="table-dark">
+                        <th scope="col">Barmens:</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="table-dark">
+                        <div *ngFor="let shift of barmensShift">
+                          <app-day-card [shift]="shift"></app-day-card>
+                        </div>
+                      </tr>
+                      <br>
+                      <tr class="table-dark">
+                        <th>Cook:</th>
+                      </tr>
+                      <tr class="table-dark">
+                        <div *ngFor="let shift of shishamensShift">
+                          <app-day-card [shift]="shift"></app-day-card>
+                        </div>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+        </div>    
+    </div>
+</div>

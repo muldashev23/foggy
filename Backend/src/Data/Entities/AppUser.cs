@@ -19,17 +19,15 @@ public class AppUser
     [Required]
     public required string Email { get; set; }
 
-    [Required]
-    public required byte[] PasswordHash { get; set; }
+    public byte[] PasswordHash { get; set; }
 
-    [Required]
-    public required byte[] PasswordSalt { get; set; }
+    public byte[] PasswordSalt { get; set; }
 
     [Required]
     public required string Role { get; set; }
 
     [JsonIgnore]
-    public Shift Shift { get; set; }
+    public List<Shift> Shift { get; set; }
 
     [Required]
     public required bool IsBarmen { get; set; }

@@ -1,0 +1,16 @@
+.row {
+  margin-top: 5vh;
+  padding: 2vh 3vw;
+}
+.h-100 {
+  border-color: rgb(72, 71, 72);
+}
+.bg-mine {
+  border: 10px;
+  border-radius: 8px;
+  border-color: rgb(99, 94, 99);
+  padding: 2vh 3vw;
+}
+.col {
+  padding: 2vh 3vw;
+}
