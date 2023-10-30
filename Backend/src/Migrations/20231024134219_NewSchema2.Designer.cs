@@ -3,6 +3,7 @@ using System;
 using Backend.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Backend.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20231024134219_NewSchema2")]
+    partial class NewSchema2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,9 +48,11 @@ namespace Backend.Migrations
                         .HasColumnType("boolean");
 
                     b.Property<byte[]>("PasswordHash")
+                        .IsRequired()
                         .HasColumnType("bytea");
 
                     b.Property<byte[]>("PasswordSalt")
+                        .IsRequired()
                         .HasColumnType("bytea");
 
                     b.Property<string>("Role")
@@ -70,8 +75,8 @@ namespace Backend.Migrations
                             FirstName = "murat",
                             IsBarmen = false,
                             IsShishaMaster = false,
-                            PasswordHash = new byte[] { 25, 145, 204, 95, 205, 127, 232, 12, 70, 23, 39, 74, 9, 33, 93, 159, 206, 52, 19, 75, 24, 21, 70, 40, 2, 76, 102, 221, 34, 62, 238, 30, 190, 167, 202, 195, 182, 119, 169, 100, 240, 80, 112, 161, 215, 189, 91, 43, 251, 179, 91, 219, 141, 50, 52, 104, 173, 6, 17, 249, 244, 227, 82, 29 },
-                            PasswordSalt = new byte[] { 177, 87, 99, 225, 222, 181, 72, 176, 145, 5, 187, 61, 104, 135, 111, 11, 230, 226, 173, 246, 49, 248, 189, 175, 199, 45, 122, 205, 195, 109, 223, 47, 15, 248, 181, 225, 38, 92, 167, 216, 179, 170, 142, 239, 85, 167, 52, 87, 163, 104, 200, 155, 117, 201, 203, 61, 206, 82, 100, 168, 215, 214, 75, 61, 49, 238, 109, 3, 98, 35, 218, 55, 179, 204, 131, 162, 54, 64, 168, 200, 78, 246, 42, 210, 214, 55, 96, 103, 243, 104, 40, 104, 94, 190, 106, 215, 201, 98, 42, 178, 142, 69, 97, 212, 37, 51, 19, 24, 155, 178, 135, 232, 133, 134, 56, 103, 208, 242, 53, 98, 87, 94, 168, 224, 239, 237, 160, 37 },
+                            PasswordHash = new byte[] { 79, 191, 232, 213, 129, 251, 100, 198, 40, 171, 235, 206, 7, 45, 170, 146, 36, 141, 150, 8, 254, 118, 118, 119, 235, 232, 202, 53, 227, 187, 129, 122, 209, 174, 161, 239, 115, 149, 182, 68, 158, 146, 71, 32, 185, 243, 47, 86, 66, 31, 74, 224, 200, 57, 67, 80, 66, 254, 99, 91, 39, 212, 248, 171 },
+                            PasswordSalt = new byte[] { 149, 213, 226, 56, 221, 115, 232, 173, 149, 219, 165, 194, 114, 34, 104, 240, 120, 234, 152, 14, 224, 61, 229, 48, 23, 250, 83, 20, 55, 38, 139, 198, 147, 83, 37, 203, 5, 104, 140, 246, 213, 69, 34, 119, 137, 119, 174, 135, 43, 56, 131, 189, 85, 249, 186, 113, 134, 161, 126, 205, 55, 150, 249, 94, 243, 232, 223, 68, 97, 101, 40, 60, 109, 34, 52, 71, 244, 57, 247, 251, 178, 235, 32, 110, 50, 0, 10, 171, 120, 205, 107, 117, 60, 24, 239, 85, 14, 118, 159, 92, 211, 54, 159, 147, 58, 12, 252, 219, 71, 97, 82, 19, 160, 182, 80, 144, 27, 180, 168, 233, 40, 7, 126, 28, 111, 248, 190, 12 },
                             Role = "Manager",
                             Surname = "muldashev"
                         });
@@ -102,7 +107,8 @@ namespace Backend.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AppUserId");
+                    b.HasIndex("AppUserId")
+                        .IsUnique();
 
                     b.ToTable("Shifts");
                 });
@@ -110,8 +116,8 @@ namespace Backend.Migrations
             modelBuilder.Entity("Backend.Data.Entities.Shift", b =>
                 {
                     b.HasOne("Backend.Data.Entities.AppUser", "AppUser")
-                        .WithMany("Shift")
-                        .HasForeignKey("AppUserId")
+                        .WithOne("Shift")
+                        .HasForeignKey("Backend.Data.Entities.Shift", "AppUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

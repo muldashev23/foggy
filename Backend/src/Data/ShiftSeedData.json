@@ -1,0 +1,65 @@
+[
+  {
+    "DayNum": 1,
+    "TimeStart": 14,
+    "WeekNum": 44,
+    "UserId": 5,
+    "DateOfShift": "2023-10-30"
+  },
+  {
+    "DayNum": 1,
+    "TimeStart": 19,
+    "WeekNum": 44,
+    "UserId": 3,
+    "DateOfShift": "2023-10-30"
+  },
+  {
+    "DayNum": 1,
+    "TimeStart": 21,
+    "WeekNum": 44,
+    "UserId": 7,
+    "DateOfShift": "2023-10-30"
+  },
+  {
+    "DayNum": 2,
+    "TimeStart": 14,
+    "WeekNum": 44,
+    "UserId": 5,
+    "DateOfShift": "2023-10-31"
+  },
+  {
+    "DayNum": 2,
+    "TimeStart": 19,
+    "WeekNum": 44,
+    "UserId": 3,
+    "DateOfShift": "2023-10-31"
+  },
+  {
+    "DayNum": 2,
+    "TimeStart": 21,
+    "WeekNum": 44,
+    "UserId": 7,
+    "DateOfShift": "2023-10-31"
+  },
+  {
+    "DayNum": 3,
+    "TimeStart": 14,
+    "WeekNum": 44,
+    "UserId": 2,
+    "DateOfShift": "2023-11-01"
+  },
+  {
+    "DayNum": 3,
+    "TimeStart": 19,
+    "WeekNum": 44,
+    "UserId": 3,
+    "DateOfShift": "2023-11-01"
+  },
+  {
+    "DayNum": 3,
+    "TimeStart": 21,
+    "WeekNum": 44,
+    "UserId": 4,
+    "DateOfShift": "2023-11-01"
+  }
+]

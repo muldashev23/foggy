@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Text;
 using Backend.Data.Entities;
 using Backend.Models.DTOs;
+using Backend.Models.Interfaces;
 using Microsoft.IdentityModel.Tokens;
 
 namespace Backend.Services;

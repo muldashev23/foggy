@@ -1,4 +1,7 @@
+using Backend.Data;
+using Backend.Data.Repositories;
 using Backend.Extensions;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,5 +37,18 @@ app.UseAuthorization();
 app.MapControllers();
 using var scrope = app.Services.CreateScope();
 var services = scrope.ServiceProvider;
+
+try
+{
+    var context = services.GetRequiredService<DataContext>();
+    await context.Database.MigrateAsync();
+    await Seed.SeedUsers(context);
+    await Seed.SeedShifts(context);
+}
+catch (Exception ex)
+{
+    var logger = services.GetService<ILogger<Program>>();
+    logger.LogError(ex, "An error occured during migration");
+}
 
 app.Run();

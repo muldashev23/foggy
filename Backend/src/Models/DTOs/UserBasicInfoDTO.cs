@@ -1,6 +1,6 @@
 ﻿namespace Backend.Models.DTOs;
 
-public class UserDTO
+public class UserBasicInfoDTO
 {
     public int Id { get; set; }
     public required string Email { get; set; }
@@ -9,6 +9,4 @@ public class UserDTO
     public required string Role { get; set; }
     public required bool IsBarmen { get; set; }
     public required bool IsShishaMaster { get; set; }
-    public required byte[] PasswordHash { get; set; }
-    public required byte[] PasswordSalt { get; set; }
 }

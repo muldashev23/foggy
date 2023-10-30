@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Backend.Models.DTOs;
+using Backend.Models.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Data.Repositories;
@@ -38,7 +39,9 @@ public class AccountRepository : IAccountRepository
             FirstName = user.FirstName,
             Token = _tokenService.CreateToken(user),
             IsAdmin = user.Role == "Admin",
-            IsManager = user.Role == "Manager"
+            IsManager = user.Role == "Manager",
+            IsBarmen = user.IsBarmen,
+            IsShishaMaster = user.IsShishaMaster
         };
     }
 }

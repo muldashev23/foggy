@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  margin-top: 10vh;
+}
+body {
+  --dot-bg: rgb(3, 32, 41);
+  --dot-color: white;
+  --dot-size: 0.5px;
+  --dot-space: 25px;
+  background: linear-gradient(
+        90deg,
+        var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
+        transparent 1%
+      )
+      center / var(--dot-space) var(--dot-space),
+    linear-gradient(
+        var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
+        transparent 1%
+      )
+      center / var(--dot-space) var(--dot-space),
+    var(--dot-color);
+}

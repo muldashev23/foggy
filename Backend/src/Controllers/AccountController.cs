@@ -1,6 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 using Backend.Models.DTOs;
+using Backend.Models.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Backend.Controllers;
@@ -14,7 +15,7 @@ public class AccountController : BaseApiController
         _accountRepository = accountRepository;
     }
 
-    [HttpPost]
+    [HttpPost("login")]
     public async Task<ActionResult<LoginResponseDTO>> Login(
         [FromBody] LoginRequestDTO loginRequestDTO
     )
