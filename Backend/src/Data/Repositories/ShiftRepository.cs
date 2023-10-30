@@ -35,8 +35,6 @@ public class ShiftRepository : IShiftRepository
         );
         var shift = new Shift
         {
-            DayNum = shiftRequestDTO.DayNum,
-            WeekNum = shiftRequestDTO.WeekNum,
             TimeStart = shiftRequestDTO.TimeStart,
             AppUser = user,
             DateOfShift = shiftRequestDTO.DateOfShift

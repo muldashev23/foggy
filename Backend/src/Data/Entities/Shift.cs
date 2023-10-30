@@ -8,9 +8,7 @@ public class Shift
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
-    public required int DayNum { get; set; }
     public required int TimeStart { get; set; }
-    public required int WeekNum { get; set; }
     public required DateOnly DateOfShift { get; set; }
 
     public int AppUserId { get; set; }

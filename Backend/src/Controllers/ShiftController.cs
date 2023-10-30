@@ -1,4 +1,5 @@
-﻿using Backend.Models.DTOs;
+﻿using Backend.Data.Entities;
+using Backend.Models.DTOs;
 using Backend.Models.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,6 +24,19 @@ public class ShiftController : BaseApiController
     public async Task<ActionResult> AddShift([FromBody] ShiftRequestDTO shiftRequestDTO)
     {
         await _shiftRepository.AddShift(shiftRequestDTO);
+        return Ok();
+    }
+
+    [HttpPost("week")]
+    public async Task<ActionResult> AddWeekShift(
+        [FromBody] List<ShiftRequestDTO> listOfShiftRequestDTO
+    )
+    {
+        Console.WriteLine(listOfShiftRequestDTO);
+        for (var shift = 0; shift < listOfShiftRequestDTO.Count; shift++)
+        {
+            await _shiftRepository.AddShift(listOfShiftRequestDTO[shift]);
+        }
         return Ok();
     }
 }

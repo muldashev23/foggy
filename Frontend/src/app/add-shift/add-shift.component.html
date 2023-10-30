@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="col bg-dark bg-mine" >
+        <input class="form-control" type="date" [(ngModel)]="selectedDate" style="max-width: 20vw;">
+        <form [formGroup]="shiftForm" (ngSubmit)="logA()">
+            
+            <div style="display: flex;">
+                <table class="table table-dark" style="max-width: 25vw;">
+                    <thead>
+                        <tr class="table-primary">
+                            <th scope="col">Barman</th>
+                        </tr>
+                    </thead>  
+                    <tbody>
+                        <tr *ngFor="let barman of barmans">
+                            <th>
+                                {{barman.firstName}} {{barman.surName}}
+                            </th>
+                        </tr>
+                    </tbody> 
+                </table> 
+                <table class="table table-dark">
+                    <thead>
+                    <tr class="table-primary">
+                        <th scope="col">Mon</th>
+                        <th scope="col">Tue</th>
+                        <th scope="col">Wed</th>
+                        <th scope="col">Thu</th>
+                        <th scope="col">Fri</th>
+                        <th scope="col">Sat</th>
+                        <th scope="col">Sun</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let row of shiftForm.controls;let i=index" class="table-dark">  
+                            <td *ngFor="let col of row.controls; let j=index" >
+                                <select [formControl]="col">
+                                    <option></option>
+                                    <option>14</option>
+                                    <option>16</option>
+                                    <option>17</option>
+                                    <option>18</option>
+                                    <option>19</option>
+                                    <option>20</option>
+                                    <option>21</option>
+                                </select>   
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+           
+            
+            <button type="submit" class="btn btn-outline-light">Print</button>
+        </form>   
+    </div>
+</div>
