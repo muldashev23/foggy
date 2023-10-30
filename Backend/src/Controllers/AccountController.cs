@@ -34,4 +34,11 @@ public class AccountController : BaseApiController
         }
         return _accountRepository.ResponseForLogin(user);
     }
+
+    [HttpGet("users")]
+    public async Task<ActionResult<List<UserBasicInfoDTO>>> GetUsers()
+    {
+        var users = await _accountRepository.GetUsers();
+        return Ok(users);
+    }
 }

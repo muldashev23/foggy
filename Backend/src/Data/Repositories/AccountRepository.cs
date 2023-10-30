@@ -44,4 +44,11 @@ public class AccountRepository : IAccountRepository
             IsShishaMaster = user.IsShishaMaster
         };
     }
+
+    public async Task<List<UserBasicInfoDTO>> GetUsers()
+    {
+        return await _context.Users
+            .ProjectTo<UserBasicInfoDTO>(_mapper.ConfigurationProvider)
+            .ToListAsync();
+    }
 }

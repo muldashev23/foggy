@@ -43,7 +43,7 @@ try
     var context = services.GetRequiredService<DataContext>();
     await context.Database.MigrateAsync();
     await Seed.SeedUsers(context);
-    await Seed.SeedShifts(context);
+    //await Seed.SeedShifts(context);
 }
 catch (Exception ex)
 {

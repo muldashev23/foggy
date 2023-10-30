@@ -3,6 +3,7 @@ import { BehaviorSubject, map } from 'rxjs';
 import { User } from '../models/user';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { AppUser } from '../models/appUser';
 
 @Injectable({
   providedIn: 'root',
@@ -32,5 +33,9 @@ export class AccountService {
   logout() {
     localStorage.removeItem('user');
     this.currentUserSource.next(null);
+  }
+
+  getUsers() {
+    return this.http.get<AppUser[]>(this.baseUrl + 'account/users');
   }
 }

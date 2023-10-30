@@ -42,8 +42,6 @@ public class Seed
             var user = await context.Users.SingleOrDefaultAsync(user => user.Id == shift.UserId);
             var newShift = new Shift
             {
-                DayNum = shift.DayNum,
-                WeekNum = shift.WeekNum,
                 TimeStart = shift.TimeStart,
                 AppUser = user,
                 DateOfShift = shift.DateOfShift
